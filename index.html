@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUANTUM SECURITY TERMINAL v2.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="matrix-background"></div>
+    
+    <!-- Header Bar -->
+    <header class="header-bar">
+        <div class="header-left">
+            <span class="terminal-title">QUANTUM SECURITY TERMINAL v2.1</span>
+            <span class="status-indicator active">ONLINE</span>
+        </div>
+        <div class="header-right">
+            <span id="current-time"></span>
+            <span class="system-status">SYSTEM: SECURE</span>
+        </div>
+    </header>
+
+    <!-- Main Interface -->
+    <main class="main-interface">
+        <!-- Left Panel - Main Terminal -->
+        <section class="terminal-panel main-terminal">
+            <div class="panel-header">
+                <span class="panel-title">MAIN TERMINAL</span>
+                <div class="panel-controls">
+                    <span class="control-dot red"></span>
+                    <span class="control-dot yellow"></span>
+                    <span class="control-dot green"></span>
+                </div>
+            </div>
+            <div class="terminal-content" id="main-terminal">
+                <div class="terminal-line">
+                    <span class="prompt">root@quantum:~$</span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel Container -->
+        <div class="right-panels">
+            <!-- System Monitor -->
+            <section class="terminal-panel system-monitor">
+                <div class="panel-header">
+                    <span class="panel-title">SYSTEM MONITOR</span>
+                </div>
+                <div class="monitor-content">
+                    <div class="stat-row">
+                        <span class="stat-label">CPU:</span>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="cpu-bar"></div>
+                        </div>
+                        <span class="stat-value" id="cpu-value">0%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">RAM:</span>
+                        <span class="stat-value" id="memory-value">15.2GB/32GB</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">UPLINK:</span>
+                        <span class="stat-value" id="network-value">847 Mbps</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">TEMP:</span>
+                        <span class="stat-value" id="temp-value">67°C</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">UPTIME:</span>
+                        <span class="stat-value" id="uptime-value">72:14:33</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Network Scanner -->
+            <section class="terminal-panel network-scanner">
+                <div class="panel-header">
+                    <span class="panel-title">NETWORK SCANNER</span>
+                </div>
+                <div class="scanner-content" id="scanner-content">
+                    <div class="scan-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="scan-progress"></div>
+                        </div>
+                        <span class="progress-text">Ready to scan...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Browser -->
+            <section class="terminal-panel file-browser">
+                <div class="panel-header">
+                    <span class="panel-title">FILE BROWSER</span>
+                </div>
+                <div class="browser-content" id="browser-content">
+                    <div class="file-tree"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <button class="control-btn" id="scan-btn">INITIATE SCAN</button>
+        <button class="control-btn" id="decrypt-btn">DECRYPT FILES</button>
+        <button class="control-btn" id="ghost-btn">GHOST MODE</button>
+        <button class="control-btn emergency" id="emergency-btn">EMERGENCY EXIT</button>
+    </div>
+
+    <!-- Alert System -->
+    <div class="alert-system" id="alert-system"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
